@@ -381,7 +381,24 @@ export default function Home() {
       <footer className="footer container">
         <Logo />
         <p>Ōzbek tili uçun mehr bilan yaratildi.</p>
-        <span>© 2026 Yangi Lotin</span>
+        <div className="footer-credits">
+          <span>© 2026 Yangi Lotin</span>
+          <span className="credits-sep">·</span>
+          <span>InnoHub</span>
+          <span className="credits-sep">·</span>
+          <span>
+            Dizayn:{" "}
+            <a href="https://usmoxandesign.framer.website/" target="_blank" rel="noopener noreferrer">
+              Usmoxan
+            </a>
+            {" "}
+            (<a href="https://www.instagram.com/usmoxan.design/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            {" · "}
+            <a href="https://telegram.me/usmoxan_design" target="_blank" rel="noopener noreferrer">Telegram</a>
+            {" · "}
+            <a href="https://dribbble.com/usmoxan" target="_blank" rel="noopener noreferrer">Dribbble</a>)
+          </span>
+        </div>
       </footer>
 
       <AnimatePresence>
