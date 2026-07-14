@@ -208,7 +208,7 @@ function DownloadButton({ large = false }: { large?: boolean }) {
           </b>
           <small>
             {state === "loading"
-              ? `${progress}% · demo fayl`
+              ? `${progress}% · Ilova`
               : state === "done"
                 ? "Blob fayl saqlandi"
                 : state === "error"
