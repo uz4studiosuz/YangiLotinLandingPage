@@ -213,7 +213,7 @@ function DownloadButton({ large = false }: { large?: boolean }) {
                 ? "Blob fayl saqlandi"
                 : state === "error"
                   ? "Aloqa uzildi"
-                  : "Bepul · demo rasm · Android 8+"}
+                  : "Bepul · Ilova · Android 8+"}
           </small>
         </span>
         {state === "idle" && <ArrowRight size={19} />}
@@ -393,7 +393,7 @@ export default function Home() {
                 <Image src={appIcon} alt="" width={68} height={68} />
               </span>
               <h3>Yangi Lotinni yuklang</h3>
-              <p>Demo rasm · Android 8 va undan yuqori</p>
+              <p>Ilova · Android 8 va undan yuqori</p>
               <DownloadButton large />
               <small>Yuklaş orqali foydalanış şartlariga rozilik bildirasiz.</small>
             </motion.div>
