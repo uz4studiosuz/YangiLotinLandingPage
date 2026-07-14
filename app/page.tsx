@@ -47,15 +47,12 @@ const floatingGlyphs = [
 
 const accentKeys = new Set(["Ğ", "Ş", "Ç", "Ō", "ğ", "ş", "ç", "ō"]);
 
-function saveBlob(blob: Blob, fileName: string) {
-  const objectUrl = URL.createObjectURL(blob);
+function triggerDownload(url: string) {
   const anchor = document.createElement("a");
-  anchor.href = objectUrl;
-  anchor.download = fileName;
+  anchor.href = url;
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
 }
 
 function Logo() {
@@ -172,22 +169,13 @@ function DownloadButton({ large = false }: { large?: boolean }) {
       setProgress((value) => Math.min(value + Math.ceil(Math.random() * 9), 94));
     }, 120);
 
-    fetch("/api/download-demo")
-      .then((response) => {
-        if (!response.ok) throw new Error("download failed");
-        return response.blob();
-      })
-      .then((blob) => {
-        window.clearInterval(progressTimer);
-        setProgress(100);
-        saveBlob(blob, "yangi-lotin-demo.apk");
-        window.setTimeout(() => setState("done"), 350);
-      })
-      .catch(() => {
-        window.clearInterval(progressTimer);
-        setProgress(0);
-        setState("error");
-      });
+    triggerDownload("/api/download-demo");
+
+    window.setTimeout(() => {
+      window.clearInterval(progressTimer);
+      setProgress(100);
+      window.setTimeout(() => setState("done"), 350);
+    }, 1200);
   };
 
   return (
@@ -210,7 +198,7 @@ function DownloadButton({ large = false }: { large?: boolean }) {
             {state === "loading"
               ? `${progress}% · Ilova`
               : state === "done"
-                ? "Blob fayl saqlandi"
+                ? "Fayl saqlandi"
                 : state === "error"
                   ? "Aloqa uzildi"
                   : "Bepul · Ilova · Android 8+"}
