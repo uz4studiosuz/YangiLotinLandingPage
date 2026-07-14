@@ -1,5 +1,5 @@
 const DEMO_DOWNLOAD_URL =
-  "https://odam.uz/upload/media/posts/2019-11/30/miyamizni-aldab-qo-yishi-mumkin-bo-lgan-8-ta-rasm-sinchkovroq-bo-ling_1575125501-b.jpg";
+  "https://github.com/uz4studiosuz/YangiLotinLandingPage/releases/download/Ilova/YangiLotinIlovasi.apk";
 
 export const dynamic = "force-dynamic";
 
