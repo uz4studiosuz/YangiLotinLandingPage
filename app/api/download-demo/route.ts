@@ -12,13 +12,12 @@ export async function GET() {
     }
 
     const body = await response.arrayBuffer();
-    const contentType = response.headers.get("content-type") ?? "image/jpeg";
 
     return new Response(body, {
       headers: {
         "Cache-Control": "no-store",
-        "Content-Disposition": 'attachment; filename="yangi-lotin-demo.jpg"',
-        "Content-Type": contentType,
+        "Content-Disposition": 'attachment; filename="yangi-lotin-demo.apk"',
+        "Content-Type": "application/vnd.android.package-archive",
       },
     });
   } catch {

@@ -180,7 +180,7 @@ function DownloadButton({ large = false }: { large?: boolean }) {
       .then((blob) => {
         window.clearInterval(progressTimer);
         setProgress(100);
-        saveBlob(blob, "yangi-lotin-demo.jpg");
+        saveBlob(blob, "yangi-lotin-demo.apk");
         window.setTimeout(() => setState("done"), 350);
       })
       .catch(() => {
